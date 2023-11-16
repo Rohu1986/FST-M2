@@ -1,0 +1,11 @@
+#create a database named office
+create database office;
+#Set office as the default DB
+use office;
+#create a table named employee
+CREATE TABLE employee
+(id INT, name STRING, dept STRING, yoj INT, salary INT)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
+TBLPROPERTIES ("skip.header.line.count"="1");
+#To add into the employee table from a local file
+LOAD DATA LOCAL INPATH '/EmpData.csv' INTO TABLE employee;
